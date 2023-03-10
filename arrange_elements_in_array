@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int arrange(int arr[], int N){
+    int start=0;
+    int end=N-1;
+    int val=1;
+    while(start<end){
+        arr[start]=val;
+        val++;
+        start++;
+        
+        arr[end]=val;
+        end--;
+        val++;
+        
+    }
+    if(start==end){
+        arr[start]=val;
+    }
+}
+int main() {
+    int N=5;
+    
+  int arr[5]={1,2,3,4,5};
+
+  int ans=arrange(arr,6);
+  for(int i=0;i<6;i++){
+  cout<<arr[i]<< " ";
+  }
+
+    return 0;
+}
