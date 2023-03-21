@@ -7,5 +7,4 @@ int main()
     int arraysize=sizeof(arr)/sizeof(arr[0]);
      
      cout<<arraysize;
-    
 }
