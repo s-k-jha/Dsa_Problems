@@ -11,7 +11,7 @@ int fact(int n){
 
 int main()
 {
-      cout<<fact(5)<<endl;
+      cout<<fact(6)<<endl;
       return 0;
     
 }
