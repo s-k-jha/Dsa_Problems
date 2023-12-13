@@ -1,0 +1,18 @@
+#include <iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main() {
+    string str= "sample text for test";
+    cout<<str;
+    cout<<endl;
+    sort(str.begin(), str.end());
+    cout<<str;
+    cout<<endl;
+    cout<<endl;
+    string abc= "700";
+    int x= stoi(abc);//converting string to integer
+    cout<<x+2;       
+     
+    return 0;
+}
