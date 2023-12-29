@@ -1,0 +1,24 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+void Rev(string &s,char &extracharacter){
+     s+=extracharacter;
+     int length=s.length();
+     string st;
+     cout<<"the complete character"<<endl;
+     cout<<s<<endl;
+     for(int i=length-1;i>=0;i--){
+        st+=s[i];
+     }
+    cout<<"the reversed string"<<endl;
+    cout<<st;
+}
+int main() {
+    string sk;
+    cin>>sk;
+    char ec;
+    cin>>ec;
+     Rev(sk,ec);
+     
+}
