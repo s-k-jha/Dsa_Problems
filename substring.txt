@@ -1,0 +1,22 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+void printSubstrings(char input[]) {
+    int len = strlen(input);
+
+    // Loop to consider the starting position of the substring
+    for (int i = 0; i < len; i++) {
+        // Loop to consider the ending position of the substring
+        for (int j = i; j < len; j++) {
+            // Print the current substring, starting from i and ending at j
+            for (int k = i; k <= j; k++) {
+                cout << input[k];
+            }
+            cout << endl; // Print a newline to separate substrings
+        }
+    }
+}
+int main(){
+    printSubstrings("shivam");
+}
