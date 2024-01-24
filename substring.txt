@@ -11,6 +11,7 @@ void printSubstrings(char input[]) {
         for (int j = i; j < len; j++) {
             // Print the current substring, starting from i and ending at j
             for (int k = i; k <= j; k++) {
+
                 cout << input[k];
             }
             cout << endl; // Print a newline to separate substrings
