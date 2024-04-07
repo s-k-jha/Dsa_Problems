@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-    string s="hello world"; //we need to find the lenght of the last word -> world =5
+    string s="hello world"; //we need to find the length of the last word -> world =5
     int siz=s.size()-1;
     int length=0;
 
