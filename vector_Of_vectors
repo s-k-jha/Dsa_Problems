@@ -3,13 +3,14 @@
 // line 2:- no of elements in that rows you want
 // line 3:- elements
 
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
 
 int main() {
     int N;
     cin >> N;
-    vector<vector<int> > v;
+    vector<vector<int>> v;
     for (int i = 0; i < N; i++) {
         int x;
         cin >> x;

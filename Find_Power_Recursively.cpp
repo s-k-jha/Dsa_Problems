@@ -9,9 +9,7 @@ int findpow(int x, int y){
     return x*smalloutput;
 }
 int main()
-
 {
-    
     cout<<findpow(2,3);
     return 0;
     
