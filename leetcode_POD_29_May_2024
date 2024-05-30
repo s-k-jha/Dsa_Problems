@@ -1,0 +1,76 @@
+//29_May_2024
+class Solution {
+public:
+    int equalSubstring(string s, string t, int maxCost) {
+        int n = s.size();
+        int i=0, j=0;
+        int maxLen = 0;
+        int curCost=0;
+        
+        while(j < n){
+            curCost += abs(s[j]-t[j]);
+            while(curCost > maxCost){
+                curCost -= abs(s[i]-t[i]);
+                i++;
+            }
+            maxLen = max(maxLen , j-i+1);
+            j++;
+        }
+        return maxLen;
+    }
+};
+
+//30_May_2024
+//Triplet sum of the array to make equal xor of two arrays
+
+// class Solution {
+// public:
+//     int countTriplets(vector<int>& arr) {
+//         int count = 0;
+//         int n = arr.size();
+        
+//         for (int i = 0; i < n; i++) {
+//             for (int j = i + 1; j < n; j++) {
+//                 int a = 0;
+//                 for (int k = i; k < j; k++) {
+//                     a ^= arr[k];
+//                 }
+                
+//                 int b = 0;
+//                 for (int k = j; k < n; k++) {
+//                     b ^= arr[k];
+//                     if (a == b) {
+//                         count++;
+//                     }
+//                 }
+//             }
+//         }
+        
+//         return count;
+//     }
+// };
+
+//below solution has time complexity of o(n^2) we can more reduce it using map to store the recent occurence of the elements
+class Solution {
+public:
+    int countTriplets(vector<int>& arr) {
+       vector<int>prefixXor(begin(arr), end(arr));
+
+       prefixXor.insert(prefixXor.begin(), 0); //initially the xor commulative will be zero
+       int n =  prefixXor.size();
+       for(int i=1;i<n;i++){
+        prefixXor[i] ^= prefixXor[i-1];
+
+       }
+       int triplets = 0;
+       for(int i = 0; i < n; i++){
+        for(int k = i+1; k < n; k++){
+            if(prefixXor[k] == prefixXor[i]){
+                triplets += (k-i-1);       // k-i for total places for placing j between i and k and -1 is extra becuase initially we have insert an extra zero for maintaining that
+            }
+        }
+    }
+       return triplets;
+
+    }
+};
