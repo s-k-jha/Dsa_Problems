@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+    public:
+    int scoreOfString(string s){
+            vector<int>arr;
+
+        for(int i=0;i<s.size()-1;i++){
+            for(int j=i+1;j<s.size();j++){
+                int result = abs(s[j]-s[i]);
+                arr.push_back(result);
+                break;
+            }
+        }
+        int count =0;
+        for(int v: arr){
+            count+=v;
+        }
+        return count;
+    }
+};
+
+int main(){
+    Solution solution ;
+    string s = "hello";
+    cout<<solution.scoreOfString(s);
+}
