@@ -1,0 +1,28 @@
+
+#include <string>
+
+class Solution {
+public:
+    int longestPalindrome(std::string s) {
+        int count[52] = {0}; // Array to store counts of characters
+        int length = 0;
+        bool hasOddCount = false;
+
+        for (char ch : s) {
+            if (ch >= 'a' && ch <= 'z')
+                count[ch - 'a']++;
+            else
+                count[ch - 'A' + 26]++;
+        }
+
+        for (int i = 0; i < 52; ++i) {
+            if (count[i] % 2 == 0)
+                length += count[i];
+            else {
+                length += count[i] - 1;     //for managing the case of "ccc" like string
+                hasOddCount = true;
+            }
+        }
+        return hasOddCount ? length + 1 : length;
+    }
+};
