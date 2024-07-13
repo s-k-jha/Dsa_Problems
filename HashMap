@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+class MyHash{
+    public:
+    vector<int>m;
+    int size;
+    MyHash(){
+        size = 10e6+1; // +1 for indexing starts from 0
+        m.resize(size);
+        fill(m.begin(), m.end(), -1);
+    }
+    void put(int key , int value){
+        m[key]= value;
+    }
+    int get(int key){
+       return m[key];
+    }
+    void remove(int key){
+        m[key]= -1;
+    }
+};
+int main() {
+    MyHash map;
+    map.put(1, 4);
+    cout<<map.get(1);
+    map.remove(1);
+    cout<<endl;
+    cout<<map.get(1);
+    return 0;
+}
