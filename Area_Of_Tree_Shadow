@@ -1,0 +1,19 @@
+
+//You have to find the area of area of shadow covered by the tree (shadow) or the area of canonical, and round off the answer to the nearest integer value
+
+#include <iostream>
+using namespace std;
+int main() {
+    int d;
+    cin>>d;
+    float ans = 3.14*d*d;
+    if(ans - int(ans) <= 0.5){
+        cout<<int(ans)<<endl;
+    }
+    else {
+        cout<<int(ans)+1<<endl;
+    }
+    
+
+    return 0;
+}
