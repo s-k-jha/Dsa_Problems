@@ -1,0 +1,22 @@
+# Common Causes of Segmentation Faults:
+# Accessing uninitialized pointers: Using a pointer before it has been assigned a valid memory address.
+# Accessing memory out of bounds: Trying to access an array element outside its defined range, or using an invalid index.
+# Dereferencing a null pointer: Attempting to access the value stored at a pointer that is null.
+# Using dangling pointers: Accessing memory that has been deallocated or is no longer valid.
+# Stack overflow: Using up all available stack space, typically due to excessive recursion.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 4;
+    int *ptr = &a;
+    //print
+    cout<<*ptr<<endl;
+    //free up space
+    ptr = nullptr;
+    delete ptr;
+    //it gives segmentation fault as we try to access deleted pointer
+    cout<<*ptr;
+    
+}
