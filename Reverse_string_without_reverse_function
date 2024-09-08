@@ -1,0 +1,52 @@
+# These are 4 brute to optimal approach for reversing the string without using reverse function 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+string reverse(string &s, int n){
+    int ptr1=0, ptr2=n-1;
+    while(ptr1 < ptr2){
+        char temp = s[ptr1];
+        s[ptr1] = s[ptr2];
+        s[ptr2] = temp;
+            ptr1++;
+            ptr2--;
+    }
+    return s;
+}
+
+int main() {
+   string str = "shivam";
+   int n = 6;
+   
+//   alternate 1:
+//   for(int i=n ; i>=0; i--){
+//       cout<<str[i]<<" ";
+//   }
+    //alternate 2: using stack
+    // stack<char>st;
+    // for(auto ele : str){
+    //     st.push(ele);
+    // }
+    // while(!st.empty()){
+    //     cout<<st.top()<<" ";
+    //     st.pop();
+    // }
+  
+    
+    //alternate 3: using extra string "res":
+  
+    //   string res = "";
+    // for(int i = n-1; i>=0; i--){
+    //     res+= str[i];
+    // }
+    // for(int i=0;i <n ;i++){
+    //     cout<<res[i];
+    // }
+    
+    
+    //alternate 4: calling function O(1)space approach only swap using function
+    cout<<reverse(str, n);
+
+    return 0;
+}
