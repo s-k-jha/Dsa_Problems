@@ -1,0 +1,27 @@
+//traverse in the array of string of words and then count the occurence of the each characters of the string words using hashmap
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    string words[] = {"ad", "abd", "abd", "alkdf"};
+    int n = sizeof(words)/ sizeof(words[0]);
+    string res = "";
+    for(int i = 0; i < n; i++){
+        string temp = words[i];
+        for(int k = 0; k < temp.length(); k++){
+            res+=temp[k];
+        }
+    }
+    for(char ch : res){
+        cout<<ch<<" ";
+    }
+    unordered_map<char , int> mp;
+    for(char ch: res){
+        mp[ch]++;
+    }
+    cout<<"now from mp map"<<endl;
+    for(auto ch : mp){
+        cout<<ch.first<<" "<<ch.second<<endl;
+    }
+
+    return 0;
+}
