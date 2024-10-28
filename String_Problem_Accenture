@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+  
+    string str[] = {"world", "hello", "madam"};
+    int k = 2;
+    vector<string> vec;
+    int n = sizeof(str) / sizeof(str[0]);
+
+    for(int i = 0; i < n; i++) {
+        string temp = "";
+        int st = 0;
+        int en = str[i].length() - 1;
+        int mid = str[i].length()/2;
+
+        string res = string(1, str[i][st]) + string(1, str[i][mid]) + string(1, str[i][en]);
+        for(int j = 0; j <= k; j++) {
+            temp += res;
+        }
+        vec.push_back(temp);
+    }
+
+    for(int i = 0; i < vec.size(); i++) {
+        cout << vec[i]<<" ";
+    }
+    return 0;
+}
